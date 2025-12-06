@@ -5,10 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
+
 @SpringBootApplication
 public class SpringRenderApplication {
 
 	public static void main(String[] args) {
+      
 
 		// --- Passo de Carregamento do .env ---
         Dotenv dotenv = Dotenv.load();
@@ -17,6 +19,7 @@ public class SpringRenderApplication {
         dotenv.entries().forEach(entry -> {
             System.setProperty(entry.getKey(), entry.getValue());
         });
+        
 		SpringApplication.run(SpringRenderApplication.class, args);
 	}
 
