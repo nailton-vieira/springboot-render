@@ -30,7 +30,6 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 # Em produção, use variáveis de ambiente do container
-COPY .env /app/.env
 
 # Define a porta que a aplicação Spring Boot usará
 EXPOSE 8080
